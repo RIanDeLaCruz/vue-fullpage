@@ -233,7 +233,7 @@ var Fullpage = function () {
                 var detail = e.wheelDelta ? e.wheelDelta / 120 : e.detail;
                 console.log(detail);
                 //Only support Y
-                var der = detail > 0 ? -1 : detail < 0 ? 1 : 0;
+                var der = detail > 0 ? 1 : detail < 0 ? -1 : 0;
                 var curIndex = der + _this2.curIndex;
                 _this2.moveTo(curIndex, true);
             });
