@@ -20,7 +20,7 @@ npm install animate.css --save
 ```
 [animate.css usage](https://daneden.github.io/animate.css/)
 
-## Document
+## Usage
 
 ### options
 
@@ -70,7 +70,7 @@ Update the dom structure,for example `v-for` and `v-if` Affect the number of pag
 ```
 
 
-## getting started
+## Getting Started
 
 #### main.js
 Import the plugin of css and js file in main.js
