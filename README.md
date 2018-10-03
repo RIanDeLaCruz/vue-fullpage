@@ -20,59 +20,9 @@ npm install animate.css --save
 ```
 [animate.css usage](https://daneden.github.io/animate.css/)
 
-## Usage
-
-### options
-
-- `start` : (default:`0`) Display first page
-- `duration` : (default:`500`) 
-- `loop` : (default:`false`) 
-- `dir` : (default:`v`) Direction of movement
-- `der` : (default:`0.1`) 
-- `movingFlag` : (default:`false`) 
-- `beforeChange` : (default:`function`) Before change callback
-- `afterChange` : (default:`function`) After change callback
-- `overflow` : (default:`hidden`) hidden || scroll || auto
-    `hidden` Hidden overflow
-    `scroll` Handling the scroll bars of page
-    `auto`  Handling all scroll bars in page,Start checking from triggered elements
-
-### method
-
-#### moveTo
-Move to the specified page
-
-#### movePrev
-Move to the previous page
-
-#### moveNext
- Move to the next page
-
-#### $upadte
-Update the dom structure,for example `v-for` and `v-if` Affect the number of pages, need to manually call `$update`
-
-```html
-  <button type="button" 
-    v-for="btn in pageNum"
-    :class="{active:index == btn + 2}" 
-    @click="moveTo(btn+2)">page {{btn+2}}</button>
-  <button type="button" @click="showPage()">add page</button>
-
-  <div class="page-2 page" v-for="page in pageNum">
-    <h2 class="part-2" v-animate="{value: 'bounceInRight'}">page {{page}}</h2>
-  </div>
-```
-```js
-    showPage:function(){
-      this.pageNum ++;
-      this.$refs.fullpage.$fullpage.$update();
-    }
-```
-
-
 ## Getting Started
 
-#### main.js
+### main.js
 Import the plugin of css and js file in main.js
 
 ```js
@@ -82,7 +32,7 @@ import VueFullpage from 'fullpage-vue'
 Vue.use(VueFullpage)
 ```
 
-#### app.vue
+### app.vue
 
 **template**
 
@@ -149,3 +99,55 @@ The following settings allow the scrolling page to fill the full screen.
 }
 </style>
 ```
+
+## API
+
+### Options
+
+These options are to be passed as a single prop `v-fullpage`
+
+- `start` : (default:`0`) Display first page
+- `duration` : (default:`500`) 
+- `loop` : (default:`false`) 
+- `dir` : (default:`v`) Direction of movement
+- `der` : (default:`0.1`) 
+- `movingFlag` : (default:`false`) 
+- `beforeChange` : (default:`function`) Before change callback
+- `afterChange` : (default:`function`) After change callback
+- `overflow` : (default:`hidden`) hidden || scroll || auto
+    `hidden` Hidden overflow
+    `scroll` Handling the scroll bars of page
+    `auto`  Handling all scroll bars in page,Start checking from triggered elements
+
+### method
+
+#### moveTo
+Move to the specified page
+
+#### movePrev
+Move to the previous page
+
+#### moveNext
+ Move to the next page
+
+#### $upadte
+Update the dom structure,for example `v-for` and `v-if` Affect the number of pages, need to manually call `$update`
+
+```html
+  <button type="button" 
+    v-for="btn in pageNum"
+    :class="{active:index == btn + 2}" 
+    @click="moveTo(btn+2)">page {{btn+2}}</button>
+  <button type="button" @click="showPage()">add page</button>
+
+  <div class="page-2 page" v-for="page in pageNum">
+    <h2 class="part-2" v-animate="{value: 'bounceInRight'}">page {{page}}</h2>
+  </div>
+```
+```js
+    showPage:function(){
+      this.pageNum ++;
+      this.$refs.fullpage.$fullpage.$update();
+    }
+```
+
